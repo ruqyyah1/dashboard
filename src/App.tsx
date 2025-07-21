@@ -20,7 +20,7 @@ function App() {
   const [data, setData] = useState<Row[]>([]);
 
   useEffect(() => {
-    fetch("/data/data.csv")
+    fetch("data/data.csv")
       .then((res) => res.text())
       .then((text) => {
         const rows = d3.csvParse(text, d3.autoType) as unknown as Row[];
